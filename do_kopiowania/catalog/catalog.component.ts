@@ -13,6 +13,8 @@ import { CommonModule } from '@angular/common';
 export class CatalogComponent {
   pets: any;
 
+
+
   constructor() {
     this.pets = [
       {
@@ -124,4 +126,7 @@ export class CatalogComponent {
     if (!pet) return '';
     return '/assets/images/' + pet.imageName;
   }
+
+
+
 }
