@@ -13,6 +13,8 @@ import { CommonModule } from '@angular/common';
 export class CatalogComponent {
   pets: any;
 
+filter:string='';
+
   constructor() {
     this.pets = [
       {
@@ -123,5 +125,11 @@ export class CatalogComponent {
   getImageUrl(pet: IPet) {
     if (!pet) return '';
     return '/assets/images/' + pet.imageName;
+  }
+
+  getFilteredPets() {
+    return this.filter === ''
+      ? this.pets
+      : this.pets.filter((pet: any) => pet.type === this.filter);
   }
 }
