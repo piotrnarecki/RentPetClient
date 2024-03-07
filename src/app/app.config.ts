@@ -1,11 +1,14 @@
 import { ApplicationConfig } from '@angular/core';
 import { provideRouter } from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { Routes } from '@angular/router';
 
 
 
 import { routes } from './app.routes';
-import { provideClientHydration } from '@angular/platform-browser';
+import { provideHttpClient } from '@angular/common/http';
 
+//https://stackoverflow.com/questions/77482678/no-provider-for-httpclient
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideClientHydration()]
+  providers: [provideRouter(routes),provideHttpClient()]
 };
